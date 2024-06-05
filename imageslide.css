@@ -1,3 +1,10 @@
+body {
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+
 .slide1Img {
   width: 100%;
 }
@@ -11,9 +18,26 @@
 }
 
 .leftArrow {
-  width: 60px;
+  width: 72px;
+  position: absolute;
+  z-index: 1;
+  top: 110px;
+  left: 10px;
+  cursor: pointer;
 }
 
 .rightArrow {
-  width: 60px;
+  width: 72px;
+  position: absolute;
+  z-index: 1;
+  top: 110px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.imageAll {
+  position: relative;
+  display: flex;
+  transition: all 0.6s;
+  transform: translateX(-1395px);
 }

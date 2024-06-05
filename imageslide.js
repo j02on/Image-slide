@@ -4,15 +4,33 @@ const slide3Img = document.querySelector(".slide3Img");
 const leftArrow = document.querySelector(".leftArrow");
 const rightArrow = document.querySelector(".rightArrow");
 const slideContainer = document.querySelector(".slideContainer");
+const imageAll = document.querySelector(".imageAll");
 
-let pageNum = 0;
-
-function startPage() {
-  slide1Img.style.display = "flex";
-  slide2Img.style.display = "none";
-  slide3Img.style.display = "none";
-  leftArrow.style.display = "flex";
-  rightArrow.style.display = "flex";
+function clickShow() {
+  let i = 1;
+  rightArrow.addEventListener("click", () => {
+    if (i < 0) {
+      i *= -1;
+    }
+    if (i === 0) {
+      i = 1;
+    } else if (i === 1) {
+      i = 2;
+    } else {
+      i = 0;
+    }
+    imageAll.style.transform = `translateX(${i * -1395}px)`;
+  });
+  leftArrow.addEventListener("click", () => {
+    if (i === 0) {
+      i = -2;
+    } else if (i === 1) {
+      i = 0;
+    } else {
+      i = -1;
+    }
+    imageAll.style.transform = `translateX(${i * 1395}px)`;
+  });
 }
 
-startPage();
+clickShow();
