@@ -9,27 +9,20 @@ const imageAll = document.querySelector(".imageAll");
 function clickShow() {
   let i = 1;
   rightArrow.addEventListener("click", () => {
-    if (i < 0) {
-      i *= -1;
-    }
-    if (i === 0) {
-      i = 1;
-    } else if (i === 1) {
-      i = 2;
-    } else {
+    if (i == 2) {
       i = 0;
+    } else {
+      i++;
     }
     imageAll.style.transform = `translateX(${i * -1395}px)`;
   });
   leftArrow.addEventListener("click", () => {
     if (i === 0) {
-      i = -2;
-    } else if (i === 1) {
-      i = 0;
+      i = 2;
     } else {
-      i = -1;
+      i--;
     }
-    imageAll.style.transform = `translateX(${i * 1395}px)`;
+    imageAll.style.transform = `translateX(${i * -1395}px)`;
   });
 }
 
